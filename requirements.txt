@@ -1,0 +1,10 @@
+streamlit
+python-dotenv
+pydantic
+typing-extensions
+langchain
+langchain-core
+langchain-openai
+langchain-chroma
+langgraph
+langgraph-checkpoint-sqlite
