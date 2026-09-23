@@ -7,6 +7,10 @@ from typing import Any
 import streamlit as st
 from langchain_core.messages import HumanMessage
 
+import os
+import streamlit as st
+
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "checkpoints.db"
