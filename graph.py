@@ -73,6 +73,8 @@ def retrieve_market_docs(
     )
 
 model = ChatOpenAI(model='gpt-5.4-mini', openai_api_key=OPENAI_API_KEY, temperature=0)
+model2 = ChatOpenAI(model='gpt-5-mini', openai_api_key=OPENAI_API_KEY, temperature=0)
+
 retrieval_model = model.bind_tools([retrieve_market_docs])
 
 class QueryRewrite(BaseModel):
@@ -113,7 +115,7 @@ If there is no market / country mentioned in the user's query, assume that the q
 You DO NOT need to answer the user's query, just retrieve the relevant context.
 Keep the retrieval query AS SIMPLE AS IT CAN GET. Try to only include the keywords provided by the user + based on the history.
 When context is retrieved, you will only see a retrieval summary.
-DO NOT PRODUCE the FINAL ANSWER, ONLY CALL TOOLS TO COLLECT CONTEXT."""
+DO NOT PRODUCE THE FINAL ANSWER, ONLY CALL TOOLS TO COLLECT CONTEXT."""
 
 RETRIEVAL_SYSTEM_PROMPT = SystemMessage(content=RETRIEVAL_PROMPT)
 
