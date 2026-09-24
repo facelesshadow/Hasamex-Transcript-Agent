@@ -33,7 +33,7 @@ Create a `.env` file:
 OPENAI_API_KEY=your_api_key
 ```
 
-In `app.py`, load the API key using `os` instead of Streamlit secrets:
+In `streamlit_app.py`, load the API key using `os` instead of Streamlit secrets:
 
 ```python
 import os
